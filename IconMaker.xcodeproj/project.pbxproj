@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E51937A19BDB72F00343F17 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E51937819BDB72F00343F17 /* MasterViewController.m */; };
+		0E51937B19BDB72F00343F17 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E51937919BDB72F00343F17 /* MasterViewController.xib */; };
+		0E51938019BDB9CF00343F17 /* IconDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E51937F19BDB9CF00343F17 /* IconDocument.m */; };
+		0E51938319BDBA1F00343F17 /* ImageFileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E51938219BDBA1F00343F17 /* ImageFileItem.m */; };
+		0E51938519BDBF0D00343F17 /* testIcon32.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E51938419BDBF0D00343F17 /* testIcon32.png */; };
+		0E51938719BDBF1700343F17 /* testIcon64.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E51938619BDBF1700343F17 /* testIcon64.png */; };
+		0E51938819BDDCB600343F17 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EADABC319B9F6DD003AB026 /* CoreData.framework */; };
 		0EADABC019B9F6DD003AB026 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EADABBF19B9F6DD003AB026 /* Cocoa.framework */; };
 		0EADABCA19B9F6DD003AB026 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0EADABC819B9F6DD003AB026 /* InfoPlist.strings */; };
 		0EADABCC19B9F6DD003AB026 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EADABCB19B9F6DD003AB026 /* main.m */; };
@@ -18,6 +25,8 @@
 		0EADABE019B9F6DD003AB026 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EADABBF19B9F6DD003AB026 /* Cocoa.framework */; };
 		0EADABE819B9F6DD003AB026 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0EADABE619B9F6DD003AB026 /* InfoPlist.strings */; };
 		0EADABEA19B9F6DD003AB026 /* IconMakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EADABE919B9F6DD003AB026 /* IconMakerTests.m */; };
+		0EEE1BE019BEE69100171244 /* IconCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE1BDE19BEE69100171244 /* IconCollectionViewController.m */; };
+		0EEE1BE119BEE69100171244 /* IconCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EEE1BDF19BEE69100171244 /* IconCollectionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E51937719BDB72F00343F17 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		0E51937819BDB72F00343F17 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		0E51937919BDB72F00343F17 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		0E51937E19BDB9CF00343F17 /* IconDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconDocument.h; sourceTree = "<group>"; };
+		0E51937F19BDB9CF00343F17 /* IconDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconDocument.m; sourceTree = "<group>"; };
+		0E51938119BDBA1F00343F17 /* ImageFileItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFileItem.h; sourceTree = "<group>"; };
+		0E51938219BDBA1F00343F17 /* ImageFileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFileItem.m; sourceTree = "<group>"; };
+		0E51938419BDBF0D00343F17 /* testIcon32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIcon32.png; sourceTree = "<group>"; };
+		0E51938619BDBF1700343F17 /* testIcon64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testIcon64.png; sourceTree = "<group>"; };
 		0EADABBC19B9F6DD003AB026 /* IconMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EADABBF19B9F6DD003AB026 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0EADABC219B9F6DD003AB026 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -50,6 +68,9 @@
 		0EADABE519B9F6DD003AB026 /* IconMakerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IconMakerTests-Info.plist"; sourceTree = "<group>"; };
 		0EADABE719B9F6DD003AB026 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0EADABE919B9F6DD003AB026 /* IconMakerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IconMakerTests.m; sourceTree = "<group>"; };
+		0EEE1BDD19BEE69100171244 /* IconCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconCollectionViewController.h; sourceTree = "<group>"; };
+		0EEE1BDE19BEE69100171244 /* IconCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconCollectionViewController.m; sourceTree = "<group>"; };
+		0EEE1BDF19BEE69100171244 /* IconCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IconCollectionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E51938819BDDCB600343F17 /* CoreData.framework in Frameworks */,
 				0EADABC019B9F6DD003AB026 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,9 +95,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E51937C19BDB95F00343F17 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				0EADABD119B9F6DD003AB026 /* MPCAppDelegate.h */,
+				0EADABD219B9F6DD003AB026 /* MPCAppDelegate.m */,
+				0EADABD419B9F6DD003AB026 /* MainMenu.xib */,
+				0E51937719BDB72F00343F17 /* MasterViewController.h */,
+				0E51937819BDB72F00343F17 /* MasterViewController.m */,
+				0E51937919BDB72F00343F17 /* MasterViewController.xib */,
+				0EEE1BDD19BEE69100171244 /* IconCollectionViewController.h */,
+				0EEE1BDE19BEE69100171244 /* IconCollectionViewController.m */,
+				0EEE1BDF19BEE69100171244 /* IconCollectionViewController.xib */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		0E51937D19BDB97300343F17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0E51937E19BDB9CF00343F17 /* IconDocument.h */,
+				0E51937F19BDB9CF00343F17 /* IconDocument.m */,
+				0E51938119BDBA1F00343F17 /* ImageFileItem.h */,
+				0E51938219BDBA1F00343F17 /* ImageFileItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		0EADABB319B9F6DC003AB026 = {
 			isa = PBXGroup;
 			children = (
+				0E51938619BDBF1700343F17 /* testIcon64.png */,
+				0E51938419BDBF0D00343F17 /* testIcon32.png */,
 				0EADABC519B9F6DD003AB026 /* IconMaker */,
 				0EADABE319B9F6DD003AB026 /* IconMakerTests */,
 				0EADABBE19B9F6DD003AB026 /* Frameworks */,
@@ -115,9 +166,8 @@
 		0EADABC519B9F6DD003AB026 /* IconMaker */ = {
 			isa = PBXGroup;
 			children = (
-				0EADABD119B9F6DD003AB026 /* MPCAppDelegate.h */,
-				0EADABD219B9F6DD003AB026 /* MPCAppDelegate.m */,
-				0EADABD419B9F6DD003AB026 /* MainMenu.xib */,
+				0E51937D19BDB97300343F17 /* Model */,
+				0E51937C19BDB95F00343F17 /* GUI */,
 				0EADABD719B9F6DD003AB026 /* Images.xcassets */,
 				0EADABC619B9F6DD003AB026 /* Supporting Files */,
 			);
@@ -231,9 +281,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E51937B19BDB72F00343F17 /* MasterViewController.xib in Resources */,
 				0EADABCA19B9F6DD003AB026 /* InfoPlist.strings in Resources */,
+				0EEE1BE119BEE69100171244 /* IconCollectionViewController.xib in Resources */,
 				0EADABD819B9F6DD003AB026 /* Images.xcassets in Resources */,
 				0EADABD019B9F6DD003AB026 /* Credits.rtf in Resources */,
+				0E51938719BDBF1700343F17 /* testIcon64.png in Resources */,
+				0E51938519BDBF0D00343F17 /* testIcon32.png in Resources */,
 				0EADABD619B9F6DD003AB026 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,7 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EADABCC19B9F6DD003AB026 /* main.m in Sources */,
+				0E51938319BDBA1F00343F17 /* ImageFileItem.m in Sources */,
+				0E51938019BDB9CF00343F17 /* IconDocument.m in Sources */,
+				0E51937A19BDB72F00343F17 /* MasterViewController.m in Sources */,
 				0EADABD319B9F6DD003AB026 /* MPCAppDelegate.m in Sources */,
+				0EEE1BE019BEE69100171244 /* IconCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +448,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IconMaker/IconMaker-Prefix.pch";
 				INFOPLIST_FILE = "IconMaker/IconMaker-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -403,6 +462,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IconMaker/IconMaker-Prefix.pch";
 				INFOPLIST_FILE = "IconMaker/IconMaker-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -467,6 +527,7 @@
 				0EADABEF19B9F6DD003AB026 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0EADABF019B9F6DD003AB026 /* Build configuration list for PBXNativeTarget "IconMakerTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +536,7 @@
 				0EADABF219B9F6DD003AB026 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
