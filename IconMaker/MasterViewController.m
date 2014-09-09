@@ -39,8 +39,8 @@
     if (self) {
         // Initialization code here.
         
-        ImageFileItem* item1 = [[ImageFileItem alloc] initWithName:@"Icon1" Size:@"32x32" Thumbnail:[NSImage imageNamed:@"testIcon32.png"]];
-        ImageFileItem* item2 = [[ImageFileItem alloc] initWithName:@"Icon2" Size:@"64x64" Thumbnail:[NSImage imageNamed:@"testIcon64.png"]];
+        ImageFileItem* item1 = [[ImageFileItem alloc] initWithName:@"Icon1" Thumbnail:[NSImage imageNamed:@"testIcon32.png"]];
+        ImageFileItem* item2 = [[ImageFileItem alloc] initWithName:@"Icon2" Thumbnail:[NSImage imageNamed:@"testIcon64.png"]];
         IconDocument* doc = [[IconDocument alloc] initWithItems:[NSMutableArray arrayWithObjects:item1,item2, nil]];
         
         self.document = doc;

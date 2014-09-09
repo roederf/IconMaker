@@ -62,7 +62,8 @@ typedef struct IconData {
 
 - (void) addItem:(NSURL *)url WithImage:(NSImage *)image {
     
-    ImageFileItem* item = [[ImageFileItem alloc] initWithName:[[url path] lastPathComponent] Size:@"32x32" Thumbnail:image];
+    
+    ImageFileItem* item = [[ImageFileItem alloc] initWithName:[[url path] lastPathComponent] Thumbnail:image];
     
     [self.imageItems addObject:item];
 }
@@ -73,10 +74,8 @@ typedef struct IconData {
     iconData->icXORLength =(int32_t)([bitmap pixelsHigh] * [bitmap bytesPerRow]);
     iconData->icXOR = malloc(iconData->icXORLength);
     
-    //memcpy(iconData->icXOR, [bitmap bitmapData], iconData->icXORLength);
     for (int i = 0; i < [bitmap pixelsHigh]; i++)
     {
-        //Array.Copy(imgData, i*stride, iconImage.icXOR, (bitmap.PixelHeight-i-1)*stride, stride);
         int destIndex =i*(int)[bitmap bytesPerRow];
         int srcIndex =((int)[bitmap pixelsHigh]-i-1)*(int)[bitmap bytesPerRow];
         memcpy(&((iconData->icXOR)[destIndex]),
@@ -92,6 +91,21 @@ typedef struct IconData {
         iconData->icAND[i] = 0;
     }
     
+    for (int j=0; j<[bitmap pixelsHigh]; j++) {
+        for (int i=0; i<[bitmap pixelsWide]; i++) {
+            
+            int index = (j*(int)[bitmap pixelsWide]+i);
+            Byte flag = 0x80 >> (index % 8);
+            
+            Byte a = iconData->icXOR[index * 4 + 3];
+            if (a == 0x00)
+            {
+                Byte value = iconData->icAND[index / 8];
+                iconData->icAND[index / 8] = value | flag;
+            }
+        }
+    }
+    
     iconData->icHeader.biSize = 40;
     iconData->icHeader.biWidth = (int32_t)[bitmap pixelsWide];
     iconData->icHeader.biHeight = 2 * (int32_t)[bitmap pixelsHigh];
@@ -103,8 +117,6 @@ typedef struct IconData {
     iconData->icHeader.biClrUsed = 0;
     iconData->icHeader.biXPelsPerMeter = 0;
     iconData->icHeader.biYPelsPerMeter = 0;
-    
-    
 }
 
 - (void) save:(NSString *)location {
@@ -144,8 +156,6 @@ typedef struct IconData {
         
         iconDataArray[i] = iconData;
         
-        
-        
         offset += entry.BytesInRes;
     }
     
@@ -162,10 +172,6 @@ typedef struct IconData {
     
     free(iconDataArray);
     
-    
-    //NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES);
-    //NSString *documentsDirectory = [paths objectAtIndex:0];
-    //NSString* path = [documentsDirectory stringByAppendingPathComponent:@"test.ico"];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDownloadsDirectory, NSUserDomainMask, YES);
     NSString *downloadDirectory = [paths objectAtIndex:0];
     NSString* path = [downloadDirectory stringByAppendingPathComponent:@"icon.ico"];

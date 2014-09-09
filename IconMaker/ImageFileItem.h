@@ -14,6 +14,6 @@
 @property (strong) NSString *size;
 @property (strong) NSImage *thumbnail;
 
-- (id)initWithName:(NSString*)name Size:(NSString*)size Thumbnail:(NSImage*)thumbnail;
+- (id)initWithName:(NSString*)name Thumbnail:(NSImage*)thumbnail;
 
 @end

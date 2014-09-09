@@ -59,13 +59,15 @@
 	{
 		for (NSURL *URL in files)
         {
-            // add file to our bundle
-            [self.document addItem:URL WithImage:[[NSImage alloc] initWithContentsOfFile:[URL path]]];
+            if ([NSImage canInitWithPasteboard:pasteboard])
+            {
+                NSImage *fileImage = [[NSImage alloc] initWithContentsOfURL:URL];
+                [self.document addItem:URL WithImage:fileImage];
+            }
         }
         
         // send KVO message so that the array controller updates itself
         [self willChangeValueForKey:@"items"];
-        //[self.items insertObjects:self.document.imageItems atIndexes:[NSIndexSet indexSetWithIndex:index]];
         [self setItems:self.document.imageItems];
         [self didChangeValueForKey:@"items"];
 	}
