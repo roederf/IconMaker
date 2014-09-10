@@ -24,7 +24,7 @@
                         <rect key="frame" x="1" y="1" width="344" height="230"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView ambiguous="YES" id="SIv-EX-jul">
+                            <collectionView ambiguous="YES" selectable="YES" id="SIv-EX-jul">
                                 <rect key="frame" x="0.0" y="0.0" width="344" height="230"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>

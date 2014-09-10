@@ -68,6 +68,22 @@ typedef struct IconData {
     [self.imageItems addObject:item];
 }
 
+- (bool) acceptsImage:(NSImage *)image {
+    NSBitmapImageRep* bitmap = [[NSBitmapImageRep alloc] initWithData:[image TIFFRepresentation]];
+    
+    if ([bitmap pixelsHigh] != [bitmap pixelsWide])
+    {
+        return false;
+    }
+    // currently only these were tested and needed.
+    if ([bitmap bitsPerPixel] != 32)
+    {
+        return false;
+    }
+    
+    return true;
+}
+
 - (void) convertIntoImage:(NSImage*)image IntoIconData:(IconData_T*) iconData {
     NSBitmapImageRep* bitmap = [[NSBitmapImageRep alloc] initWithData:[image TIFFRepresentation]];
     
@@ -119,7 +135,7 @@ typedef struct IconData {
     iconData->icHeader.biYPelsPerMeter = 0;
 }
 
-- (void) save:(NSString *)location {
+- (void) save:(NSString *)name {
     
     NSMutableData *documentContent = [NSMutableData alloc];
     // add header
@@ -174,7 +190,7 @@ typedef struct IconData {
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDownloadsDirectory, NSUserDomainMask, YES);
     NSString *downloadDirectory = [paths objectAtIndex:0];
-    NSString* path = [downloadDirectory stringByAppendingPathComponent:@"icon.ico"];
+    NSString* path = [downloadDirectory stringByAppendingPathComponent:name];
     
     [documentContent writeToFile:path atomically:true];
     

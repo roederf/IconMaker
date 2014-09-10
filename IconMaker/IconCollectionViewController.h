@@ -18,6 +18,7 @@
 }
 
 @property (strong) NSMutableArray* items;
+@property NSInteger selectedIndex;
 @property (strong) IconDocument* document;
 
 - (IBAction)CreateIcon:(id)sender;

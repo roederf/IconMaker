@@ -62,7 +62,10 @@
             if ([NSImage canInitWithPasteboard:pasteboard])
             {
                 NSImage *fileImage = [[NSImage alloc] initWithContentsOfURL:URL];
-                [self.document addItem:URL WithImage:fileImage];
+                if ([self.document acceptsImage:fileImage])
+                {
+                    [self.document addItem:URL WithImage:fileImage];
+                }
             }
         }
         
@@ -86,6 +89,6 @@
 }
 
 - (IBAction)CreateIcon:(id)sender {
-    [self.document save:@"test.ico"];
+    [self.document save:@"Icon.ico"];
 }
 @end
