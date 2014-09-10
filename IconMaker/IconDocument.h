@@ -18,6 +18,8 @@
 
 - (void)addItem:(NSURL*)url WithImage:(NSImage*) image;
 
+- (void)removeObjectFromImageItemsAtIndex:(NSUInteger)index;
+
 - (bool)acceptsImage:(NSImage*) image;
 
 - (void)save:(NSString*)name;

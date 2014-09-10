@@ -68,6 +68,10 @@ typedef struct IconData {
     [self.imageItems addObject:item];
 }
 
+- (void) removeObjectFromImageItemsAtIndex:(NSUInteger)index {
+    [self.imageItems removeObjectAtIndex:index];
+}
+
 - (bool) acceptsImage:(NSImage *)image {
     NSBitmapImageRep* bitmap = [[NSBitmapImageRep alloc] initWithData:[image TIFFRepresentation]];
     
@@ -80,7 +84,7 @@ typedef struct IconData {
     {
         return false;
     }
-    
+        
     return true;
 }
 

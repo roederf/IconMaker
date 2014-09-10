@@ -27,6 +27,8 @@
 		0EADABEA19B9F6DD003AB026 /* IconMakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EADABE919B9F6DD003AB026 /* IconMakerTests.m */; };
 		0EEE1BE019BEE69100171244 /* IconCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE1BDE19BEE69100171244 /* IconCollectionViewController.m */; };
 		0EEE1BE119BEE69100171244 /* IconCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EEE1BDF19BEE69100171244 /* IconCollectionViewController.xib */; };
+		0EF02ED519C02FB400C0D286 /* PreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF02ED319C02FB400C0D286 /* PreferencesViewController.m */; };
+		0EF02ED619C02FB400C0D286 /* PreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EF02ED419C02FB400C0D286 /* PreferencesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,9 @@
 		0EEE1BDD19BEE69100171244 /* IconCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconCollectionViewController.h; sourceTree = "<group>"; };
 		0EEE1BDE19BEE69100171244 /* IconCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconCollectionViewController.m; sourceTree = "<group>"; };
 		0EEE1BDF19BEE69100171244 /* IconCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IconCollectionViewController.xib; sourceTree = "<group>"; };
+		0EF02ED219C02FB400C0D286 /* PreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesViewController.h; sourceTree = "<group>"; };
+		0EF02ED319C02FB400C0D286 /* PreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesViewController.m; sourceTree = "<group>"; };
+		0EF02ED419C02FB400C0D286 /* PreferencesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +112,9 @@
 				0EEE1BDD19BEE69100171244 /* IconCollectionViewController.h */,
 				0EEE1BDE19BEE69100171244 /* IconCollectionViewController.m */,
 				0EEE1BDF19BEE69100171244 /* IconCollectionViewController.xib */,
+				0EF02ED219C02FB400C0D286 /* PreferencesViewController.h */,
+				0EF02ED319C02FB400C0D286 /* PreferencesViewController.m */,
+				0EF02ED419C02FB400C0D286 /* PreferencesViewController.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -283,6 +291,7 @@
 			files = (
 				0E51937B19BDB72F00343F17 /* MasterViewController.xib in Resources */,
 				0EADABCA19B9F6DD003AB026 /* InfoPlist.strings in Resources */,
+				0EF02ED619C02FB400C0D286 /* PreferencesViewController.xib in Resources */,
 				0EEE1BE119BEE69100171244 /* IconCollectionViewController.xib in Resources */,
 				0EADABD819B9F6DD003AB026 /* Images.xcassets in Resources */,
 				0EADABD019B9F6DD003AB026 /* Credits.rtf in Resources */,
@@ -312,6 +321,7 @@
 				0E51938019BDB9CF00343F17 /* IconDocument.m in Sources */,
 				0E51937A19BDB72F00343F17 /* MasterViewController.m in Sources */,
 				0EADABD319B9F6DD003AB026 /* MPCAppDelegate.m in Sources */,
+				0EF02ED519C02FB400C0D286 /* PreferencesViewController.m in Sources */,
 				0EEE1BE019BEE69100171244 /* IconCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

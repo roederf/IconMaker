@@ -14,7 +14,7 @@
 @interface IconCollectionViewController : NSViewController <NSCollectionViewDelegate>
 {
     IBOutlet NSCollectionView *collectionView;
-    IBOutlet NSArrayController *arrayController;
+    NSArrayController *_arrayController;
 }
 
 @property (strong) NSMutableArray* items;
@@ -23,4 +23,5 @@
 
 - (IBAction)CreateIcon:(id)sender;
 
+@property (strong) IBOutlet NSArrayController *arrayController;
 @end

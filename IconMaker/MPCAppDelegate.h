@@ -12,4 +12,6 @@
 
 @property (assign) IBOutlet NSWindow *window;
 
+- (IBAction)OpenPreferences:(id)sender;
+
 @end

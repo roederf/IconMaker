@@ -20,11 +20,15 @@
 {
     
     // register types that we accept
-    NSArray *supportedTypes = [NSArray arrayWithObjects:NSFilenamesPboardType, nil];
+    NSArray *supportedTypes = [NSArray arrayWithObjects:NSFilenamesPboardType,@"my_drag_type_id", nil];
     [collectionView registerForDraggedTypes:supportedTypes];
+    
+    //[collectionView registerForDraggedTypes:@[KL_DRAG_TYPE]];
     
     // from external we always add
     [collectionView setDraggingSourceOperationMask:NSDragOperationCopy forLocal:NO];
+    
+    [self.arrayController addObserver:self forKeyPath:@"selectionIndexes" options:NSKeyValueObservingOptionNew context:nil];
     
     IconDocument* doc = [[IconDocument alloc] initWithItems:[NSMutableArray arrayWithObjects:nil]];
     
@@ -33,9 +37,55 @@
     [self setItems:self.document.imageItems];
 }
 
-- (NSDragOperation)collectionView:(NSCollectionView *)collectionView validateDrop:(id)draggingInfo proposedIndex:(NSInteger *)proposedDropIndex dropOperation:(NSCollectionViewDropOperation *)proposedDropOperation
+-(void)observeValueForKeyPath:(NSString *)keyPath
+                     ofObject:(id)object
+                       change:(NSDictionary *)change
+                      context:(void *)context
 {
-	return NSDragOperationCopy;
+    if([keyPath isEqualTo:@"selectionIndexes"])
+    {
+        if([[self.arrayController selectedObjects] count] > 0)
+        {
+            if ([[self.arrayController selectedObjects] count] == 1)
+            {
+                ImageFileItem * item = (ImageFileItem *)[[self.arrayController selectedObjects] objectAtIndex:0];
+                NSLog(@"Only 1 selected: %@", [item name]);
+            }
+            else
+            {
+                // More than one selected - iterate if need be
+            }
+        }
+    }
+}
+
+-(BOOL)collectionView:(NSCollectionView *)collectionView writeItemsAtIndexes:(NSIndexSet *)indexes toPasteboard:(NSPasteboard *)pasteboard {
+    NSLog(@"Write Items at indexes : %@", indexes);
+    NSData *indexData = [NSKeyedArchiver archivedDataWithRootObject:indexes];
+    [pasteboard setData:indexData forType:@"my_drag_type_id"];
+    return YES;
+}
+
+- (BOOL)collectionView:(NSCollectionView *)collectionView canDragItemsAtIndexes:(NSIndexSet *)indexes withEvent:(NSEvent *)event {
+    NSLog(@"Can Drag");
+    return YES;
+}
+
+- (NSDragOperation)collectionView:(NSCollectionView *)collectionView validateDrop:(id<NSDraggingInfo>)draggingInfo proposedIndex:(NSInteger *)proposedDropIndex dropOperation:(NSCollectionViewDropOperation *)proposedDropOperation
+{
+    if ([draggingInfo draggingSource])
+    {
+        return NSDragOperationDelete;
+    }
+    else {
+        return NSDragOperationCopy;
+    }
+}
+
+-(void)draggingSession:(NSDraggingSession *)session endedAtPoint:(NSPoint)screenPoint operation:(NSDragOperation)operation {
+    if (operation == NSDragOperationNone) {
+        //delete object, remove from view, etc.
+    }
 }
 
 - (BOOL)collectionView:(NSCollectionView *)collectionView acceptDrop:(id<NSDraggingInfo>)draggingInfo index:(NSInteger)index dropOperation:(NSCollectionViewDropOperation)dropOperation

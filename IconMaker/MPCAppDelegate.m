@@ -9,11 +9,13 @@
 #import "MPCAppDelegate.h"
 
 #import "IconCollectionViewController.h"
+#import "PreferencesViewController.h"
 
 @interface MPCAppDelegate()
 
 //@property (nonatomic, strong) IBOutlet MasterViewController *masterViewController;
 @property (nonatomic, strong) IBOutlet IconCollectionViewController *iconCollectionViewController;
+@property (nonatomic, strong) IBOutlet PreferencesViewController *prefController;
 
 @end
 
@@ -33,4 +35,8 @@
     
     }
 
+- (IBAction)OpenPreferences:(id)sender {
+    self.prefController = [[PreferencesViewController alloc] initWithWindowNibName:@"PreferencesViewController"];
+    [self.prefController showWindow:NSApp];
+}
 @end
