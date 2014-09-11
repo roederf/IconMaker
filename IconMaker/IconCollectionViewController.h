@@ -22,6 +22,7 @@
 @property (strong) IconDocument* document;
 
 - (IBAction)CreateIcon:(id)sender;
+- (IBAction)NewIcon:(id)sender;
 
 @property (strong) IBOutlet NSArrayController *arrayController;
 @end

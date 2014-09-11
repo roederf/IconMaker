@@ -141,4 +141,14 @@
 - (IBAction)CreateIcon:(id)sender {
     [self.document save:@"Icon.ico"];
 }
+
+- (IBAction)NewIcon:(id)sender {
+    [self.document.imageItems removeAllObjects];
+    
+    // send KVO message so that the array controller updates itself
+    [self willChangeValueForKey:@"items"];
+    [self setItems:self.document.imageItems];
+    [self didChangeValueForKey:@"items"];
+
+}
 @end
